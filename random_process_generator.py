@@ -40,7 +40,7 @@ class RandomProcessGenerator():
                 low_burst_percentage = bursts_percentage[i][0]
                 high_burst_percentage = bursts_percentage[i][1]
 
-                final_file_name = FOLDERS[i] + self.PREFIX + self.DIVIDER + "Case-" + str(j) + self.DIVIDER + str(process_quantity[j]) + "-processes" + self.SUFFIX
+                final_file_name = FOLDERS[i] + self.PREFIX + self.DIVIDER + "Case-" + str(j+1) + self.DIVIDER + str(process_quantity[j]) + "-processes" + self.SUFFIX
                 self.generate_scenario(FOLDERS[i], final_file_name, process_quantity[j], low_burst_percentage, high_burst_percentage)
 
     def generate_scenario(self, folder, final_file_name, process_quantity, low_burst_percentage, high_burst_percentage):
