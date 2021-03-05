@@ -28,9 +28,9 @@ class RandomProcessGenerator():
 
         process_quantity = [5, 25, 50, 100]
 
-        FOLDERS = ["My test dataset 1 - 50-50 low and high bursts\\",
-                   "My test dataset 2 - 20-80 low and high bursts\\",
-                   "My test dataset 3 - 80-20 low and high bursts\\"]
+        FOLDERS = ["Scenarios\\My test dataset 1 - 50-50 low and high bursts\\",
+                   "Scenarios\\My test dataset 2 - 20-80 low and high bursts\\",
+                   "Scenarios\\My test dataset 3 - 80-20 low and high bursts\\"]
 
         bursts_percentage = [[50, 50], [20, 80], [80, 20]]
 
