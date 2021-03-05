@@ -91,7 +91,7 @@ class RandomProcessGenerator():
 
         # Generate low bursts
         for _ in range(low_bursts_quantity):
-            bursts.append(random.randint(0, 10))
+            bursts.append(random.randint(1, 10))
 
         # Generate high bursts
         for _ in range(high_bursts_quantity):
