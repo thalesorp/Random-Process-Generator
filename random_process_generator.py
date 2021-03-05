@@ -17,8 +17,10 @@ from pathlib import Path
 class RandomProcessGenerator():
     '''Main class of this project.'''
 
+    MAIN_FOLDER  = "My test dataset"
+    SLASH = "\\"
     PREFIX = "My-test-dataset"
-    DIVIDER = "_"
+    DIVIDER = " - "
     SUFFIX = ".text"
 
     def __init__(self):
@@ -28,9 +30,9 @@ class RandomProcessGenerator():
 
         process_quantity = [5, 25, 50, 100]
 
-        FOLDERS = ["Scenarios\\My test dataset 1 - 50-50 low and high bursts\\",
-                   "Scenarios\\My test dataset 2 - 20-80 low and high bursts\\",
-                   "Scenarios\\My test dataset 3 - 80-20 low and high bursts\\"]
+        FOLDERS = [self.MAIN_FOLDER + self.SLASH + "My test dataset 1" + self.DIVIDER + "50-50" + self.SLASH,
+                   self.MAIN_FOLDER + self.SLASH + "My test dataset 2" + self.DIVIDER + "20-80" + self.SLASH,
+                   self.MAIN_FOLDER + self.SLASH + "My test dataset 3" + self.DIVIDER + "80-20" + self.SLASH]
 
         bursts_percentage = [[50, 50], [20, 80], [80, 20]]
 
@@ -40,7 +42,9 @@ class RandomProcessGenerator():
                 low_burst_percentage = bursts_percentage[i][0]
                 high_burst_percentage = bursts_percentage[i][1]
 
-                final_file_name = FOLDERS[i] + self.PREFIX + self.DIVIDER + "Case-" + str(j+1) + self.DIVIDER + str(process_quantity[j]) + "-processes" + self.SUFFIX
+                file_path = FOLDERS[i] + self.SLASH
+                file_name = "Case " + str(j+1) + self.DIVIDER + str(process_quantity[j]) + " processes" + self.SUFFIX
+                final_file_name = file_path + file_name
                 self.generate_scenario(FOLDERS[i], final_file_name, process_quantity[j], low_burst_percentage, high_burst_percentage)
 
     def generate_scenario(self, folder, final_file_name, process_quantity, low_burst_percentage, high_burst_percentage):
